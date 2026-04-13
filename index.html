@@ -5,378 +5,325 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vrushabh Lanjekar — Data Analytics Portfolio</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap"
-    rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-
-  <div id="cursor"></div>
-  <canvas id="heroParticles"></canvas>
-
   <!-- NAV -->
-  <nav>
-    <span class="nav-logo">VL/DA</span>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#projects">Work</a>
-      <a href="#tools">Stack</a>
-      <a href="#contact">Contact</a>
+  <nav id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">VL/DA</div>
+      <div class="nav-links">
+        <a href="#about-section">About</a>
+        <a href="#projects-section">Work</a>
+        <a href="#certificates-section">Certificates</a>
+        <a href="#contact-section">Contact</a>
+      </div>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section id="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-grid-overlay"></div>
-    <div class="blob blob1"></div>
-    <div class="blob blob2"></div>
-    <div class="blob blob3"></div>
+  <!-- BACKGROUND PARALLAX ELEMENTS -->
+  <div class="global-glow" id="globalGlow"></div>
 
-    <div class="hero-content">
-      <!-- LEFT: text -->
-      <div class="hero-left">
-        <p class="hero-eyebrow">Jr. Data Analytics Intern · Data Visualization · Strategy</p>
-        <h1 class="hero-title">
-          <span class="line">TURN</span>
-          <span class="line">DATA INTO</span>
-          <span class="line">DECISIONS</span>
-        </h1>
-        <p class="hero-sub">I'm Vrushabh Lanjekar, a Jr. Data Analytics Intern crafting insights that drive measurable
-          business growth — through clean analysis, compelling visualization, and sharp storytelling.</p>
-        <a href="#projects" class="hero-cta">
-          View Selected Work <span class="hero-cta-arrow">→</span>
+  <!-- FRAME 1: HERO -->
+  <section id="hero-section" class="pin-track" style="height: 140vh;">
+    <div class="sticky-viewport flex-center">
+      <div class="container hero-container" id="hero-content" style="padding-top: 60px;">
+
+        <!-- Content -->
+        <div class="hero-left" id="hero-text">
+          <span class="hero-eyebrow">Data Analytics Intern</span>
+          <h1 class="hero-title">
+            Delivering Actionable <br>
+            <span class="text-gradient">Data Insights</span>
+          </h1>
+          <p class="hero-subtitle">
+            I am Vrushabh Lanjekar, a Data Analytics Intern specializing in transforming complex datasets into strategic
+            insights. I focus on comprehensive data analysis and clear visualization to drive informed business
+            decisions.
+          </p>
+        </div>
+
+        <!-- Visual -->
+        <div class="hero-visual" id="hero-visual">
+          <div class="mac-frame-circle" id="hero-mac-frame">
+            <!-- Hidden original image used for color extraction -->
+            <img id="profileImage" src="Profile Image.jpeg" alt="" style="display:none;" crossorigin="anonymous">
+            <!-- Visible image -->
+            <img src="Profile Image.jpeg" alt="Vrushabh Lanjekar" class="profile-img">
+          </div>
+          <div class="floating-badge badge-1" id="hero-badge-1">
+            <div class="badge-dot"></div>
+            <span>Live Analytics</span>
+          </div>
+          <div class="floating-badge badge-2" id="hero-badge-2">
+            <div class="badge-dot"></div>
+            <span>Python & SQL</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FRAME 2: ABOUT -->
+  <section id="about-section" class="pin-track" style="height: 180vh;">
+    <div class="sticky-viewport flex-center">
+      <div class="container">
+        <div class="about-grid" style="padding-top: 80px;">
+          <div class="about-text" id="about-text-container">
+            <h2>Professional<br><span class="text-gradient">Summary</span></h2>
+            <p id="about-p1">As a data professional, I engineer robust analytics solutions and interactive dashboards
+              that empower executive decision-making.</p>
+            <p id="about-p2">I am committed to generating measurable business impact by optimizing operational
+              efficiency and identifying growth opportunities through rigorous statistical analysis.</p>
+            <div class="mini-badges" id="about-badges">
+              <span class="mini-badge">Python</span>
+              <span class="mini-badge">SQL</span>
+              <span class="mini-badge">Excel</span>
+              <span class="mini-badge">Power BI</span>
+              <span class="mini-badge">Snowflake</span>
+            </div>
+          </div>
+          <div class="about-visual" id="about-chart-container"
+            style="flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem;">
+            <div>
+              <h3 style="font-size: 2.5rem; color: var(--primary-color);">50M+</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0;">Rows Analyzed</p>
+            </div>
+            <div>
+              <h3 style="font-size: 2.5rem; color: var(--primary-color);">98%</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0;">Model Accuracy</p>
+            </div>
+            <div>
+              <h3 style="font-size: 2.5rem; color: var(--primary-color);">5+</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0;">Enterprise Dashboards</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FRAME 3: PROJECTS SHOWCASE -->
+  <section id="projects-section" class="pin-track" style="height: 400vh;">
+    <div class="sticky-viewport flex-center overflow-hidden">
+
+      <!-- Fixed Header for Projects -->
+      <div class="projects-track-header" id="projects-header">
+        <h2>Professional <span class="text-gradient">Projects</span></h2>
+      </div>
+
+      <!-- Project Panels Container -->
+      <div class="projects-stage">
+
+        <!-- Project 1 -->
+        <article class="project-panel" id="project-panel-1">
+          <div class="project-info">
+            <span class="project-category">Sales Dashboard</span>
+            <h3 class="project-title">Blinkit Sales Analysis</h3>
+            <p class="project-desc">Developed an interactive Power BI dashboard to evaluate revenue streams, product
+              demand, and regional performance, successfully identifying key drivers for a 20-30% growth in peak-demand
+              categories.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Power BI</span>
+              <span class="tech-tag">Excel</span>
+            </div>
+            <a href="https://github.com/VrushabLanjekar/BlinkIT-Report-Project" target="_blank" class="project-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                </path>
+              </svg>
+              View Source
+            </a>
+          </div>
+          <div class="project-visual">
+            <div class="mac-window">
+              <div class="mac-header">
+                <div class="mac-dot"></div>
+                <div class="mac-dot"></div>
+                <div class="mac-dot"></div>
+              </div>
+              <div class="mac-body">
+                <img src="BlinkIt.png" alt="BlinkIt Dashboard">
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-panel" id="project-panel-2">
+          <div class="project-info">
+            <span class="project-category">Data Warehousing</span>
+            <h3 class="project-title">Customer & Sales DWH</h3>
+            <p class="project-desc">Architected a centralized data warehouse, harmonizing disparite databases into an
+              optimized schema. This initiative enhanced query efficiency and reduced data inconsistencies by 35%.</p>
+            <div class="project-tech">
+              <span class="tech-tag">SQL</span>
+              <span class="tech-tag">ETL</span>
+              <span class="tech-tag">Data Modeling</span>
+              <span class="tech-tag">Snowflake Schema</span>
+            </div>
+            <a href="https://github.com/VrushabLanjekar/Data-Warehousing-Project" target="_blank" class="project-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                </path>
+              </svg>
+              View Source
+            </a>
+          </div>
+          <div class="project-visual">
+            <div class="mac-window">
+              <div class="mac-header">
+                <div class="mac-dot"></div>
+                <div class="mac-dot"></div>
+                <div class="mac-dot"></div>
+              </div>
+              <div class="mac-body">
+                <img src="DV.png" alt="Data Warehouse Schema">
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-panel" id="project-panel-3">
+          <div class="project-info">
+            <span class="project-category">Exploratory Data Analysis</span>
+            <h3 class="project-title">Diwali Sales Analysis</h3>
+            <p class="project-desc">Conducted exploratory data analysis on festive season sales utilizing Python,
+              Pandas, and NumPy. Leveraged Matplotlib and Seaborn to visualize consumer demographic trends and revenue
+              distribution.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Seaborn</span>
+              <span class="tech-tag">Matplotlib</span>
+            </div>
+            <a href="https://github.com/VrushabLanjekar/Diwali_Sales_Analysis" target="_blank" class="project-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                </path>
+              </svg>
+              View Source
+            </a>
+          </div>
+          <div class="project-visual">
+            <div class="mac-window">
+              <div class="mac-header">
+                <div class="mac-dot"></div>
+                <div class="mac-dot"></div>
+                <div class="mac-dot"></div>
+              </div>
+              <div class="mac-body">
+                <img src="DA.jpg" alt="Data Analytics Plot">
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FRAME 4: CERTIFICATES -->
+  <section id="certificates-section" class="pin-track" style="height: 300vh;">
+    <div class="sticky-viewport flex-center overflow-hidden">
+      <div class="container" style="width: 100%;">
+        <div class="certs-header" id="certs-header">
+          <h2>Professional <span class="text-gradient">Certifications</span></h2>
+        </div>
+        <div class="cert-carousel-container">
+          <div class="cert-carousel-track" id="certs-track">
+            <div class="cert-card" id="cert-card-1">
+              <div class="cert-img-container">
+                <img src="Research Certf.png" alt="Yoga Analytics Certificate" class="cert-img">
+              </div>
+              <h3 class="cert-title">Mental Wellness via Yoga Analytics</h3>
+              <p class="cert-issuer">ADYPU Pune — Presentation</p>
+              <div class="cert-date">October 2025</div>
+            </div>
+
+            <div class="cert-card" id="cert-card-2">
+              <div class="cert-img-container">
+                <img src="Internship Certf.png" alt="AI Azure Internship Certificate" class="cert-img">
+              </div>
+              <h3 class="cert-title">AI Azure Internship Completion</h3>
+              <p class="cert-issuer">Microsoft & AICTE</p>
+              <div class="cert-date">July 2025</div>
+            </div>
+
+            <div class="cert-card" id="cert-card-3">
+              <div class="cert-img-container">
+                <img src="Data Visualisation.png" alt="TATA Data Visualisation Certificate" class="cert-img">
+              </div>
+              <h3 class="cert-title">Data Visualisation: Effective Insights</h3>
+              <p class="cert-issuer">TATA (Forage)</p>
+              <div class="cert-date">April 2025</div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FRAME 5: CONTACT -->
+  <section id="contact-section" class="scroll-frame" style="min-height: 100vh; display: flex; align-items: center;">
+    <div class="container contact-container" id="contact-content">
+      <h2>Let's <span class="text-gradient">Collaborate.</span></h2>
+      <p>I am open to new opportunities and data challenges. Please reach out via the form below to discuss potential
+        collaborations.</p>
+
+      <form id="contactForm" class="contact-form">
+        <div class="form-group">
+          <label for="contactName">Your Name</label>
+          <input id="contactName" type="text" placeholder="Enter your name" required />
+        </div>
+        <div class="form-group">
+          <label for="contactEmail">Email Address</label>
+          <input id="contactEmail" type="email" placeholder="your@email.com" required />
+        </div>
+        <div class="form-group">
+          <label for="contactSubject">Subject</label>
+          <input id="contactSubject" type="text" placeholder="What's this about?" required />
+        </div>
+        <div class="form-group">
+          <label for="contactMessage">Message</label>
+          <textarea id="contactMessage" placeholder="Tell me about your project or challenge..." required></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Send Message</button>
+        <div id="formStatus"></div>
+      </form>
+
+      <div class="contact-socials">
+        <a href="https://www.linkedin.com/in/vrushab-lanjekar-2209b1244" class="social-link" target="_blank"
+          rel="noopener noreferrer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/VrushabLanjekar" class="social-link" target="_blank" rel="noopener noreferrer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+            </path>
+          </svg>
+          GitHub
         </a>
       </div>
-
-      <!-- RIGHT: animated profile -->
-      <div class="hero-profile">
-        <!-- Orbit rings -->
-        <div class="orbit-ring"></div>
-        <div class="orbit-ring"></div>
-        <div class="orbit-ring"></div>
-
-        <!-- Orbit dots -->
-        <div class="orbit-dot orbit-dot-1"></div>
-        <div class="orbit-dot orbit-dot-2"></div>
-        <div class="orbit-dot orbit-dot-3"></div>
-
-        <!-- Orbit skill tags -->
-        <div class="orbit-tag orbit-tag-1">Python</div>
-        <div class="orbit-tag orbit-tag-2">SQL</div>
-        <div class="orbit-tag orbit-tag-3">ML</div>
-
-        <!-- Profile photo frame -->
-        <div class="profile-frame">
-          <div class="profile-inner">
-            <div class="profile-scan"></div>
-            <!-- Profile photo -->
-            <img id="profilePhoto" src="photo.jpeg" alt="Vrushabh Lanjekar"
-              style="width:100%; height:100%; object-fit:cover; object-position:center top; border-radius:50%;" />
-          </div>
-        </div>
-
-        <!-- Floating data chips -->
-        <div class="data-chip chip-1">
-          <span class="data-chip-dot" style="background:var(--accent3)"></span>
-          <div class="chip-bars">
-            <div class="chip-bar"></div>
-            <div class="chip-bar"></div>
-            <div class="chip-bar"></div>
-            <div class="chip-bar"></div>
-          </div>
-          <span>Live Analytics</span>
-        </div>
-
-        <div class="data-chip chip-2">
-          <span class="data-chip-dot" style="background:var(--accent2)"></span>
-          <span>98% Accuracy</span>
-        </div>
-
-        <div class="data-chip chip-3">
-          <span class="data-chip-dot" style="background:var(--accent)"></span>
-          <span>50M+ Rows / day</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="hero-scroll-hint">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
     </div>
   </section>
 
-  <!-- MARQUEE -->
-  <div class="marquee-wrap">
-    <div class="marquee-track" id="marqueeTrack"></div>
-  </div>
-
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="about-visual reveal">
-      <div class="about-card about-card-main">
-        <div class="about-chart">
-          <div class="chart-bar" style="height:45%; animation-delay:.2s;"></div>
-          <div class="chart-bar" style="height:60%; animation-delay:.3s;"></div>
-          <div class="chart-bar" style="height:38%; animation-delay:.4s;"></div>
-          <div class="chart-bar" style="height:75%; animation-delay:.5s;"></div>
-          <div class="chart-bar" style="height:55%; animation-delay:.6s;"></div>
-          <div class="chart-bar" style="height:90%; animation-delay:.7s;"></div>
-          <div class="chart-bar" style="height:68%; animation-delay:.8s;"></div>
-          <div class="chart-bar" style="height:82%; animation-delay:.9s;"></div>
-        </div>
-      </div>
-      <div class="about-card about-card-accent">
-        <span class="stat-num">98<span style="font-size:1.5rem;">%</span></span>
-        <span class="stat-label">Model Accuracy</span>
-      </div>
-    </div>
-
-    <div class="about-text">
-      <span class="section-tag reveal">Who I Am</span>
-      <h2 class="section-title reveal reveal-delay-1">Where <em>numbers</em> meet narrative</h2>
-      <p class="reveal reveal-delay-2">I turn complex business data into trusted analytics solutions and executive
-        dashboards that guide stronger decisions. My focus is on delivering reliable pipelines, sharp storytelling, and
-        measurable business impact across revenue, operations, and customer experience.</p>
-      <div class="about-badges reveal reveal-delay-3">
-        <span class="badge">Python</span>
-        <span class="badge">SQL</span>
-        <span class="badge">Tableau</span>
-        <span class="badge">Power BI</span>
-        <span class="badge">ML Modeling</span>
-        <span class="badge">A/B Testing</span>
-        <span class="badge">dbt</span>
-        <span class="badge">Snowflake</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills">
-    <div class="skills-header">
-      <div>
-        <span class="section-tag" style="color:rgba(244,241,235,.4)">Core Competencies</span>
-        <h2 class="section-title" style="color:var(--paper)">What I<br><em>do best</em></h2>
-      </div>
-    </div>
-    <div class="skills-grid reveal">
-      <div class="skill-cell">
-        <span class="skill-icon">📊</span>
-        <div class="skill-name">Data Visualization</div>
-        <p class="skill-desc">Interactive dashboards and charts that make complex data instantly comprehensible for any
-          audience.</p>
-        <div class="skill-level" style="width:92%"></div>
-      </div>
-      <div class="skill-cell">
-        <span class="skill-icon">🧠</span>
-        <div class="skill-name">Predictive Modeling</div>
-        <p class="skill-desc">Building regression, classification, and forecasting models with scikit-learn, XGBoost,
-          and more.</p>
-        <div class="skill-level" style="width:85%; background:var(--accent3)"></div>
-      </div>
-      <div class="skill-cell">
-        <span class="skill-icon">🔍</span>
-        <div class="skill-name">Exploratory Analysis</div>
-        <p class="skill-desc">Deep-dive statistical analysis uncovering hidden patterns, anomalies, and opportunities in
-          messy data.</p>
-        <div class="skill-level" style="width:95%; background:var(--accent2)"></div>
-      </div>
-      <div class="skill-cell">
-        <span class="skill-icon">⚙️</span>
-        <div class="skill-name">Data Engineering</div>
-        <p class="skill-desc">Designing robust ETL pipelines and data warehouses that power analytics at scale.</p>
-        <div class="skill-level" style="width:78%; background:#d4a000"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects">
-    <div class="projects-header">
-      <div>
-        <span class="section-tag reveal">Selected Work</span>
-        <h2 class="section-title reveal reveal-delay-1">Projects that <em>move the needle</em></h2>
-      </div>
-    </div>
-    <div class="projects-grid">
-      <div class="course-card reveal">
-        <div class="course-image">
-          <img src="BlinkIt.png" alt="E-commerce Sales Dashboard Thumbnail">
-        </div>
-        <div class="course-content">
-          <span class="course-category">Sales Dashboard</span>
-          <h3 class="course-title">Blinkit Sales Analysis</h3>
-          <p class="course-desc">Built an interactive Power BI dashboard to analyze revenue, product demand, and city
-            performance, identifying a 20–30% growth in peak-demand categories.</p>
-          <div class="course-tech">
-            <span class="tech-chip">Power BI</span>
-            <span class="tech-chip">Excel</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="course-card reveal reveal-delay-1">
-        <div class="course-image">
-          <img src="DV.png" alt="Data warehouse">
-        </div>
-        <div class="course-content">
-          <span class="course-category">Data Warehousing project</span>
-          <h3 class="course-title">Customer & Sales Data Warehouse Optimization</h3>
-          <p class="course-desc">Designed a centralized data warehouse by integrating multiple noisy databases into a
-            clean schema, improving query efficiency and reducing inconsistencies by 35%.</p>
-          <div class="course-tech">
-            <span class="tech-chip">SQL</span>
-            <span class="tech-chip">ETL</span>
-            <span class="tech-chip">Data Modeling</span>
-            <span class="tech-chip">Star & Snowflake Schema</span>
-
-          </div>
-        </div>
-      </div>
-
-      <div class="course-card reveal reveal-delay-2">
-        <div class="course-image">
-          <img src="DA.jpg" alt="Data Analytics">
-        </div>
-        <div class="course-content">
-          <span class="course-category">Exploratory Data Analysis</span>
-          <h3 class="course-title">Diwali_Sales_Analysis</h3>
-          <p class="course-desc">Analyzed festive season sales using Python, Pandas, NumPy, and Matplotlib to uncover
-            customer trends, top products, and revenue patterns.</p>
-          <div class="course-tech">
-            <span class="tech-chip">Python</span>
-            <span class="tech-chip">Seaborn</span>
-            <span class="tech-chip">Matplotlib</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-
-  </section>
-
-  <!-- METRICS -->
-  <section id="metrics">
-    <div class="metrics-bg-text">GROWTH</div>
-    <div class="metrics-grid">
-      <div class="metric reveal">
-        <div class="metric-num" data-target="8" data-suffix="+">0</div>
-        <div class="metric-label">Projects Completed</div>
-      </div>
-      <div class="metric reveal reveal-delay-1">
-        <div class="metric-num" data-target="95" data-suffix="%">0</div>
-        <div class="metric-label">Data Quality Score</div>
-      </div>
-      <div class="metric reveal reveal-delay-2">
-        <div class="metric-num" data-target="5" data-suffix="+">0</div>
-        <div class="metric-label">Dashboards Built</div>
-      </div>
-      <div class="metric reveal reveal-delay-3">
-        <div class="metric-num" data-target="12" data-suffix=" MOS">0</div>
-        <div class="metric-label">Professional Growth</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TOOLS -->
-  <section id="tools">
-    <span class="section-tag reveal">My Stack</span>
-    <h2 class="section-title reveal reveal-delay-1">Tools of the <em>trade</em></h2>
-    <div class="tools-grid reveal">
-      <div class="tool-item"><span class="tool-num">01</span>
-        <div style="font-size:1.5rem;">🐍</div>
-        <div class="tool-name">Python</div>
-        <div class="tool-cat">Language</div>
-      </div>
-      <div class="tool-item"><span class="tool-num">02</span>
-        <div style="font-size:1.5rem;">🗃️</div>
-        <div class="tool-name">SQL / dbt</div>
-        <div class="tool-cat">Data Transformation</div>
-      </div>
-      <div class="tool-item"><span class="tool-num">03</span>
-        <div style="font-size:1.5rem;">📊</div>
-        <div class="tool-name">Tableau</div>
-        <div class="tool-cat">Visualization</div>
-      </div>
-      <div class="tool-item"><span class="tool-num">04</span>
-        <div style="font-size:1.5rem;">⚡</div>
-        <div class="tool-name">Power BI</div>
-        <div class="tool-cat">Business Intelligence</div>
-      </div>
-      <div class="tool-item"><span class="tool-num">05</span>
-        <div style="font-size:1.5rem;">❄️</div>
-        <div class="tool-name">Snowflake</div>
-        <div class="tool-cat">Data Warehouse</div>
-      </div>
-      <div class="tool-item"><span class="tool-num">06</span>
-        <div style="font-size:1.5rem;">🤖</div>
-        <div class="tool-name">Scikit-learn</div>
-        <div class="tool-cat">Machine Learning</div>
-      </div>
-      <div class="tool-item"><span class="tool-num">07</span>
-        <div style="font-size:1.5rem;">🔥</div>
-        <div class="tool-name">Apache Spark</div>
-        <div class="tool-cat">Big Data</div>
-      </div>
-      <div class="tool-item"><span class="tool-num">08</span>
-        <div style="font-size:1.5rem;">📈</div>
-        <div class="tool-name">Looker</div>
-        <div class="tool-cat">Analytics Platform</div>
-      </div>
-      <div class="tool-item"><span class="tool-num">09</span>
-        <div style="font-size:1.5rem;">☁️</div>
-        <div class="tool-name">AWS / GCP</div>
-        <div class="tool-cat">Cloud Infrastructure</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="blob blob1" style="opacity:.06; top:-20%; right:-5%;"></div>
-    <span class="section-tag" style="color:rgba(244,241,235,.35)">Get In Touch</span>
-    <h2 class="contact-title reveal">
-      LET'S BUILD<br>
-      SOMETHING <span>GREAT</span>
-    </h2>
-    <p class="contact-sub reveal">Have a data challenge? Fill the form below and let's turn complexity into clarity —
-      together.</p>
-
-    <form id="contactForm" class="contact-form reveal" onsubmit="handleContactSubmit(event)">
-      <div class="form-group">
-        <label for="contactName">Your Name</label>
-        <input id="contactName" type="text" placeholder="Enter your name" required />
-      </div>
-      <div class="form-group">
-        <label for="contactEmail">Email Address</label>
-        <input id="contactEmail" type="email" placeholder="your@email.com" required />
-      </div>
-      <div class="form-group">
-        <label for="contactSubject">Subject</label>
-        <input id="contactSubject" type="text" placeholder="What's this about?" required />
-      </div>
-      <div class="form-group full-width">
-        <label for="contactMessage">Message</label>
-        <textarea id="contactMessage" placeholder="Tell me about your project or challenge..." required></textarea>
-      </div>
-      <button type="submit" class="cta-btn">Send Message →</button>
-      <p id="formStatus" style="margin-top:1rem; font-size:.9rem; opacity:0; transition: opacity .3s;"></p>
-    </form>
-
-    <div class="contact-socials reveal">
-      <a
-        href="https://www.linkedin.com/in/vrushab-lanjekar-2209b1244?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn</a>
-      <a href="https://github.com/VrushabLanjekar  ">GitHub</a>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
   <footer>
-    <span>© 2026 spcl infotech pune</span>
-    <span>Crafted with precision</span>
+    <div class="container">
+      <p>© 2026 SPCL Infotech Services Pvt Ltd Pune</p>
+    </div>
   </footer>
 
   <script src="script.js"></script>
